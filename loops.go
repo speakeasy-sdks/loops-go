@@ -53,6 +53,7 @@ type sdkConfiguration struct {
 	UserAgent         string
 	RetryConfig       *retry.Config
 	Hooks             *hooks.Hooks
+	Timeout           *time.Duration
 }
 
 func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
@@ -140,15 +141,22 @@ func WithRetryConfig(retryConfig retry.Config) SDKOption {
 	}
 }
 
+// WithTimeout Optional request timeout applied to each operation
+func WithTimeout(timeout time.Duration) SDKOption {
+	return func(sdk *Loops) {
+		sdk.sdkConfiguration.Timeout = &timeout
+	}
+}
+
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *Loops {
 	sdk := &Loops{
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.3.0",
-			SDKVersion:        "0.0.1",
-			GenVersion:        "2.361.10",
-			UserAgent:         "speakeasy-sdk/go 0.0.1 2.361.10 1.3.0 github.com/speakeasy-sdks/loops-go",
+			SDKVersion:        "0.1.0",
+			GenVersion:        "2.370.1",
+			UserAgent:         "speakeasy-sdk/go 0.1.0 2.370.1 1.3.0 github.com/speakeasy-sdks/loops-go",
 			Hooks:             hooks.New(),
 		},
 	}
