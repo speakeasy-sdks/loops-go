@@ -298,6 +298,98 @@ func main() {
 
 <!-- End Special Types [types] -->
 
+<!-- Start Retries [retries] -->
+## Retries
+
+Some of the endpoints in this SDK support retries. If you use the SDK without any configuration, it will fall back to the default retry strategy provided by the API. However, the default retry strategy can be overridden on a per-operation basis, or across the entire SDK.
+
+To change the default retry strategy for a single API call, simply provide a `retry.Config` object to the call by using the `WithRetries` option:
+```go
+package main
+
+import (
+	"context"
+	loopsgo "github.com/speakeasy-sdks/loops-go"
+	"github.com/speakeasy-sdks/loops-go/models/components"
+	"github.com/speakeasy-sdks/loops-go/retry"
+	"log"
+	"models/operations"
+)
+
+func main() {
+	s := loopsgo.New(
+		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+	)
+	request := components.ContactRequest{
+		Email:        "Ashtyn_Beer@gmail.com",
+		MailingLists: &components.MailingLists{},
+	}
+	ctx := context.Background()
+	res, err := s.Contacts.PostContactsCreate(ctx, request, operations.WithRetries(
+		retry.Config{
+			Strategy: "backoff",
+			Backoff: &retry.BackoffStrategy{
+				InitialInterval: 1,
+				MaxInterval:     50,
+				Exponent:        1.1,
+				MaxElapsedTime:  100,
+			},
+			RetryConnectionErrors: false,
+		}))
+	if err != nil {
+		log.Fatal(err)
+	}
+	if res.ContactSuccessResponse != nil {
+		// handle response
+	}
+}
+
+```
+
+If you'd like to override the default retry strategy for all operations that support retries, you can use the `WithRetryConfig` option at SDK initialization:
+```go
+package main
+
+import (
+	"context"
+	loopsgo "github.com/speakeasy-sdks/loops-go"
+	"github.com/speakeasy-sdks/loops-go/models/components"
+	"github.com/speakeasy-sdks/loops-go/retry"
+	"log"
+)
+
+func main() {
+	s := loopsgo.New(
+		loopsgo.WithRetryConfig(
+			retry.Config{
+				Strategy: "backoff",
+				Backoff: &retry.BackoffStrategy{
+					InitialInterval: 1,
+					MaxInterval:     50,
+					Exponent:        1.1,
+					MaxElapsedTime:  100,
+				},
+				RetryConnectionErrors: false,
+			}),
+		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+	)
+	request := components.ContactRequest{
+		Email:        "Ashtyn_Beer@gmail.com",
+		MailingLists: &components.MailingLists{},
+	}
+	ctx := context.Background()
+	res, err := s.Contacts.PostContactsCreate(ctx, request)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if res.ContactSuccessResponse != nil {
+		// handle response
+	}
+}
+
+```
+<!-- End Retries [retries] -->
+
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
 # Development
