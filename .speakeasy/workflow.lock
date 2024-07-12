@@ -1,0 +1,27 @@
+speakeasyVersion: 1.330.2
+sources:
+    loops-oas:
+        sourceNamespace: loops-oas
+        sourceRevisionDigest: sha256:e6d730e0e787dec691853a0c6affac22f7a22c5b27edd3c1f25567fbcc979dbb
+        sourceBlobDigest: sha256:662c87694a3e867d81369ac184ce87ca83a8e7cbb6b492a7287fa7552b614286
+        tags:
+            - latest
+targets:
+    loops:
+        source: loops-oas
+        sourceNamespace: loops-oas
+        sourceRevisionDigest: sha256:e6d730e0e787dec691853a0c6affac22f7a22c5b27edd3c1f25567fbcc979dbb
+        sourceBlobDigest: sha256:662c87694a3e867d81369ac184ce87ca83a8e7cbb6b492a7287fa7552b614286
+        outLocation: /Users/robertcrumbaugh/code/customers/loops-go
+workflow:
+    workflowVersion: 1.0.0
+    sources:
+        loops-oas:
+            inputs:
+                - location: https://app.loops.so/openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/loops-oas
+    targets:
+        loops:
+            target: go
+            source: loops-oas

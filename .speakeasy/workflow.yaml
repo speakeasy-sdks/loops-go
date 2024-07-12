@@ -1,0 +1,11 @@
+workflowVersion: 1.0.0
+sources:
+    loops-oas:
+        inputs:
+            - location: https://app.loops.so/openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/loops-oas
+targets:
+    loops:
+        target: go
+        source: loops-oas

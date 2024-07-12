@@ -1,0 +1,9 @@
+# GetContactsFindResponse
+
+
+## Fields
+
+| Field                                                                                                             | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `HTTPMeta`                                                                                                        | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                                | :heavy_check_mark:                                                                                                | N/A                                                                                                               |
+| `Contacts`                                                                                                        | [][components.Contact](../../models/components/contact.md)                                                        | :heavy_minus_sign:                                                                                                | List of contacts (or an empty array if no contact was found). Contact objects will include any custom properties. |
