@@ -9,3 +9,13 @@ Based on:
 - [go v0.1.0] .
 ### Releases
 - [Go v0.1.0] https://github.com/speakeasy-sdks/loops-go/releases/tag/v0.1.0 - .
+
+## 2024-07-12 16:53:50
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.334.1 (2.370.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.1.1] .
+### Releases
+- [Go v0.1.1] https://github.com/speakeasy-sdks/loops-go/releases/tag/v0.1.1 - .

@@ -154,9 +154,9 @@ func New(opts ...SDKOption) *Loops {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.3.0",
-			SDKVersion:        "0.1.0",
+			SDKVersion:        "0.1.1",
 			GenVersion:        "2.370.1",
-			UserAgent:         "speakeasy-sdk/go 0.1.0 2.370.1 1.3.0 github.com/speakeasy-sdks/loops-go",
+			UserAgent:         "speakeasy-sdk/go 0.1.1 2.370.1 1.3.0 github.com/speakeasy-sdks/loops-go",
 			Hooks:             hooks.New(),
 		},
 	}

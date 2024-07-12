@@ -2,8 +2,8 @@ speakeasyVersion: 1.334.1
 sources:
     loops-oas:
         sourceNamespace: loops-oas
-        sourceRevisionDigest: sha256:c088663ae984ed7c9204d6aaa47b3662cda730bc2eb5b9e72bccaa27e9a0b9da
-        sourceBlobDigest: sha256:170ba04377dd77115725dd43e5b4350a16a3a69e12499e923e3afafbccc1e4ff
+        sourceRevisionDigest: sha256:6fd6ed5afbf517deb9fe9730f38570545164c841af4dc2b29d1f401c316824f6
+        sourceBlobDigest: sha256:39348dfc0970443ad871a97b792b0fdfe25f7f79888848802a2f47bc44b58df0
         tags:
             - latest
             - main
@@ -11,8 +11,8 @@ targets:
     loops:
         source: loops-oas
         sourceNamespace: loops-oas
-        sourceRevisionDigest: sha256:c088663ae984ed7c9204d6aaa47b3662cda730bc2eb5b9e72bccaa27e9a0b9da
-        sourceBlobDigest: sha256:170ba04377dd77115725dd43e5b4350a16a3a69e12499e923e3afafbccc1e4ff
+        sourceRevisionDigest: sha256:6fd6ed5afbf517deb9fe9730f38570545164c841af4dc2b29d1f401c316824f6
+        sourceBlobDigest: sha256:39348dfc0970443ad871a97b792b0fdfe25f7f79888848802a2f47bc44b58df0
         outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0
