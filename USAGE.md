@@ -7,11 +7,12 @@ import (
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"log"
+	"os"
 )
 
 func main() {
 	s := loopsgo.New(
-		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+		loopsgo.WithSecurity(os.Getenv("API_KEY")),
 	)
 	request := components.ContactRequest{
 		Email:        "Ashtyn_Beer@gmail.com",

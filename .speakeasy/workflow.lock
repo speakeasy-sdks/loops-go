@@ -1,19 +1,18 @@
-speakeasyVersion: 1.334.1
+speakeasyVersion: 1.339.0
 sources:
     loops-oas:
         sourceNamespace: loops-oas
-        sourceRevisionDigest: sha256:6fd6ed5afbf517deb9fe9730f38570545164c841af4dc2b29d1f401c316824f6
-        sourceBlobDigest: sha256:39348dfc0970443ad871a97b792b0fdfe25f7f79888848802a2f47bc44b58df0
+        sourceRevisionDigest: sha256:54137b4506009ee62aaa7e6719778807f81379155e195e3e7ce58724e830b43f
+        sourceBlobDigest: sha256:39b6d05aaab2ce1c4cd749524618d223366151ccfae9e5a0200cba9e2a71bb58
         tags:
             - latest
-            - main
 targets:
     loops:
         source: loops-oas
         sourceNamespace: loops-oas
-        sourceRevisionDigest: sha256:6fd6ed5afbf517deb9fe9730f38570545164c841af4dc2b29d1f401c316824f6
-        sourceBlobDigest: sha256:39348dfc0970443ad871a97b792b0fdfe25f7f79888848802a2f47bc44b58df0
-        outLocation: /github/workspace/repo
+        sourceRevisionDigest: sha256:54137b4506009ee62aaa7e6719778807f81379155e195e3e7ce58724e830b43f
+        sourceBlobDigest: sha256:39b6d05aaab2ce1c4cd749524618d223366151ccfae9e5a0200cba9e2a71bb58
+        outLocation: /Users/robertcrumbaugh/code/customers/loops-go
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -21,6 +20,8 @@ workflow:
         loops-oas:
             inputs:
                 - location: https://app.loops.so/openapi.yaml
+            overlays:
+                - location: .speakeasy/overlay.yaml
             registry:
                 location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/loops-oas
     targets:

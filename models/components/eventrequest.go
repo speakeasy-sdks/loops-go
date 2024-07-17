@@ -2,10 +2,6 @@
 
 package components
 
-// EventProperties - An object containing event property data for the event, available in emails sent by the event.
-type EventProperties struct {
-}
-
 // EventRequestMailingLists - An object of mailing list IDs and boolean subscription statuses.
 type EventRequestMailingLists struct {
 }
@@ -15,7 +11,7 @@ type EventRequest struct {
 	UserID    *string `json:"userId,omitempty"`
 	EventName string  `json:"eventName"`
 	// An object containing event property data for the event, available in emails sent by the event.
-	EventProperties *EventProperties `json:"eventProperties,omitempty"`
+	EventProperties map[string]any `json:"eventProperties,omitempty"`
 	// An object of mailing list IDs and boolean subscription statuses.
 	MailingLists *EventRequestMailingLists `json:"mailingLists,omitempty"`
 }
@@ -41,7 +37,7 @@ func (o *EventRequest) GetEventName() string {
 	return o.EventName
 }
 
-func (o *EventRequest) GetEventProperties() *EventProperties {
+func (o *EventRequest) GetEventProperties() map[string]any {
 	if o == nil {
 		return nil
 	}

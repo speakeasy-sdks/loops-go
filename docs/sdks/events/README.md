@@ -19,6 +19,7 @@ Send events to trigger emails in Loops.
 package main
 
 import(
+	"os"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"context"
@@ -27,7 +28,7 @@ import(
 
 func main() {
     s := loopsgo.New(
-        loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        loopsgo.WithSecurity(os.Getenv("API_KEY")),
     )
     request := components.EventRequest{
         EventName: "<value>",

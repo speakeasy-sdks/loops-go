@@ -19,6 +19,7 @@ Retrieve a list of your account's mailing lists.
 package main
 
 import(
+	"os"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"context"
 	"log"
@@ -26,7 +27,7 @@ import(
 
 func main() {
     s := loopsgo.New(
-        loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        loopsgo.WithSecurity(os.Getenv("API_KEY")),
     )
 
     ctx := context.Background()
