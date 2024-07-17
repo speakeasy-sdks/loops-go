@@ -2,10 +2,6 @@
 
 package components
 
-// DataVariables - An object containing contact data as defined by the data variables added to the transactional email template.
-type DataVariables struct {
-}
-
 type TransactionalRequest struct {
 	Email string `json:"email"`
 	// The ID of the transactional email to send.
@@ -13,7 +9,7 @@ type TransactionalRequest struct {
 	// If `true`, a contact will be created in your audience using the `email` value (if a matching contact doesn't already exist).
 	AddToAudience *bool `json:"addToAudience,omitempty"`
 	// An object containing contact data as defined by the data variables added to the transactional email template.
-	DataVariables *DataVariables `json:"dataVariables,omitempty"`
+	DataVariables map[string]any `json:"dataVariables,omitempty"`
 }
 
 func (o *TransactionalRequest) GetEmail() string {
@@ -37,7 +33,7 @@ func (o *TransactionalRequest) GetAddToAudience() *bool {
 	return o.AddToAudience
 }
 
-func (o *TransactionalRequest) GetDataVariables() *DataVariables {
+func (o *TransactionalRequest) GetDataVariables() map[string]any {
 	if o == nil {
 		return nil
 	}

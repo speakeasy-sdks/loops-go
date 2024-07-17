@@ -6,3 +6,6 @@ actions:
   - target: $["components"]["schemas"]["EventRequest"]["properties"]["eventProperties"]
     update:
       additionalProperties: true
+  - target: $["components"]["schemas"]["TransactionalRequest"]["properties"]["dataVariables"]
+    update:
+      additionalProperties: true

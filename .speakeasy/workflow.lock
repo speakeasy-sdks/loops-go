@@ -2,16 +2,16 @@ speakeasyVersion: 1.339.0
 sources:
     loops-oas:
         sourceNamespace: loops-oas
-        sourceRevisionDigest: sha256:54137b4506009ee62aaa7e6719778807f81379155e195e3e7ce58724e830b43f
-        sourceBlobDigest: sha256:39b6d05aaab2ce1c4cd749524618d223366151ccfae9e5a0200cba9e2a71bb58
+        sourceRevisionDigest: sha256:4f9101e31552e5718c807e014e14fd48cec7d53eb3cba4915ae4563f8a97525f
+        sourceBlobDigest: sha256:983b70b2fe0a734467632faf716a7f565a355bf31b50e58a4c066527259742ae
         tags:
             - latest
 targets:
     loops:
         source: loops-oas
         sourceNamespace: loops-oas
-        sourceRevisionDigest: sha256:54137b4506009ee62aaa7e6719778807f81379155e195e3e7ce58724e830b43f
-        sourceBlobDigest: sha256:39b6d05aaab2ce1c4cd749524618d223366151ccfae9e5a0200cba9e2a71bb58
+        sourceRevisionDigest: sha256:4f9101e31552e5718c807e014e14fd48cec7d53eb3cba4915ae4563f8a97525f
+        sourceBlobDigest: sha256:983b70b2fe0a734467632faf716a7f565a355bf31b50e58a4c066527259742ae
         outLocation: /Users/robertcrumbaugh/code/customers/loops-go
 workflow:
     workflowVersion: 1.0.0
