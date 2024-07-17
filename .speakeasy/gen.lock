@@ -5,8 +5,8 @@ management:
   docVersion: 1.3.0
   speakeasyVersion: 1.339.0
   generationVersion: 2.375.5
-  releaseVersion: 0.2.2
-  configChecksum: dc6d021e1e2fce52dcaeead8f8bfdd8f
+  releaseVersion: 0.2.3
+  configChecksum: fb89be4b0a8403dd1274b2bab80bf543
   repoURL: https://github.com/speakeasy-sdks/loops-go.git
   installationURL: https://github.com/speakeasy-sdks/loops-go
 features:

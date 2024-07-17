@@ -2,17 +2,18 @@ speakeasyVersion: 1.339.0
 sources:
     loops-oas:
         sourceNamespace: loops-oas
-        sourceRevisionDigest: sha256:4f9101e31552e5718c807e014e14fd48cec7d53eb3cba4915ae4563f8a97525f
-        sourceBlobDigest: sha256:983b70b2fe0a734467632faf716a7f565a355bf31b50e58a4c066527259742ae
+        sourceRevisionDigest: sha256:8359e6792fb8da49a8e5b26375aecf816fc017dcef8db4b68b77ec76234d898f
+        sourceBlobDigest: sha256:464f2100513eb956c4d7a7c8dcb79c1c73f0a08fa14af2310fe881e6768eb1bf
         tags:
             - latest
+            - main
 targets:
     loops:
         source: loops-oas
         sourceNamespace: loops-oas
-        sourceRevisionDigest: sha256:4f9101e31552e5718c807e014e14fd48cec7d53eb3cba4915ae4563f8a97525f
-        sourceBlobDigest: sha256:983b70b2fe0a734467632faf716a7f565a355bf31b50e58a4c066527259742ae
-        outLocation: /Users/robertcrumbaugh/code/customers/loops-go
+        sourceRevisionDigest: sha256:8359e6792fb8da49a8e5b26375aecf816fc017dcef8db4b68b77ec76234d898f
+        sourceBlobDigest: sha256:464f2100513eb956c4d7a7c8dcb79c1c73f0a08fa14af2310fe881e6768eb1bf
+        outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
