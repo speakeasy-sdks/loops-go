@@ -5,6 +5,6 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Key`              | **string*          | :heavy_minus_sign: | N/A                |
-| `Label`            | **string*          | :heavy_minus_sign: | N/A                |
-| `Type`             | **string*          | :heavy_minus_sign: | N/A                |
+| `Key`              | *string*           | :heavy_check_mark: | N/A                |
+| `Label`            | *string*           | :heavy_check_mark: | N/A                |
+| `Type`             | *string*           | :heavy_check_mark: | N/A                |

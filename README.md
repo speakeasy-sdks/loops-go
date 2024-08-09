@@ -37,12 +37,11 @@ import (
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"log"
-	"os"
 )
 
 func main() {
 	s := loopsgo.New(
-		loopsgo.WithSecurity(os.Getenv("API_KEY")),
+		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 	request := components.ContactRequest{
 		Email:        "Ashtyn_Beer@gmail.com",
@@ -110,12 +109,11 @@ import (
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"github.com/speakeasy-sdks/loops-go/models/sdkerrors"
 	"log"
-	"os"
 )
 
 func main() {
 	s := loopsgo.New(
-		loopsgo.WithSecurity(os.Getenv("API_KEY")),
+		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 	request := components.ContactRequest{
 		Email:        "Ashtyn_Beer@gmail.com",
@@ -163,13 +161,12 @@ import (
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"log"
-	"os"
 )
 
 func main() {
 	s := loopsgo.New(
 		loopsgo.WithServerIndex(0),
-		loopsgo.WithSecurity(os.Getenv("API_KEY")),
+		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 	request := components.ContactRequest{
 		Email:        "Ashtyn_Beer@gmail.com",
@@ -199,13 +196,12 @@ import (
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"log"
-	"os"
 )
 
 func main() {
 	s := loopsgo.New(
 		loopsgo.WithServerURL("https://app.loops.so/api/v1"),
-		loopsgo.WithSecurity(os.Getenv("API_KEY")),
+		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 	request := components.ContactRequest{
 		Email:        "Ashtyn_Beer@gmail.com",
@@ -273,12 +269,11 @@ import (
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"log"
-	"os"
 )
 
 func main() {
 	s := loopsgo.New(
-		loopsgo.WithSecurity(os.Getenv("API_KEY")),
+		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 	request := components.ContactRequest{
 		Email:        "Ashtyn_Beer@gmail.com",
@@ -319,12 +314,11 @@ import (
 	"github.com/speakeasy-sdks/loops-go/retry"
 	"log"
 	"models/operations"
-	"os"
 )
 
 func main() {
 	s := loopsgo.New(
-		loopsgo.WithSecurity(os.Getenv("API_KEY")),
+		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 	request := components.ContactRequest{
 		Email:        "Ashtyn_Beer@gmail.com",
@@ -362,7 +356,6 @@ import (
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"github.com/speakeasy-sdks/loops-go/retry"
 	"log"
-	"os"
 )
 
 func main() {
@@ -378,7 +371,7 @@ func main() {
 				},
 				RetryConnectionErrors: false,
 			}),
-		loopsgo.WithSecurity(os.Getenv("API_KEY")),
+		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 	request := components.ContactRequest{
 		Email:        "Ashtyn_Beer@gmail.com",

@@ -1,9 +1,9 @@
-speakeasyVersion: 1.339.0
+speakeasyVersion: 1.358.0
 sources:
     loops-oas:
         sourceNamespace: loops-oas
-        sourceRevisionDigest: sha256:8359e6792fb8da49a8e5b26375aecf816fc017dcef8db4b68b77ec76234d898f
-        sourceBlobDigest: sha256:464f2100513eb956c4d7a7c8dcb79c1c73f0a08fa14af2310fe881e6768eb1bf
+        sourceRevisionDigest: sha256:3e3a0b4a60a67d1ada2aa2bcc43e7412b2e02ec4042fea95798478dab055cb73
+        sourceBlobDigest: sha256:476977346936cc88e0f4e9177b7531d84318c42c94f5abac23d8f86af9197aee
         tags:
             - latest
             - main
@@ -11,8 +11,8 @@ targets:
     loops:
         source: loops-oas
         sourceNamespace: loops-oas
-        sourceRevisionDigest: sha256:8359e6792fb8da49a8e5b26375aecf816fc017dcef8db4b68b77ec76234d898f
-        sourceBlobDigest: sha256:464f2100513eb956c4d7a7c8dcb79c1c73f0a08fa14af2310fe881e6768eb1bf
+        sourceRevisionDigest: sha256:3e3a0b4a60a67d1ada2aa2bcc43e7412b2e02ec4042fea95798478dab055cb73
+        sourceBlobDigest: sha256:476977346936cc88e0f4e9177b7531d84318c42c94f5abac23d8f86af9197aee
         outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0

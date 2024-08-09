@@ -5,6 +5,6 @@
 
 | Field              | Type               | Required           | Description        | Example            |
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Success`          | **bool*            | :heavy_minus_sign: | N/A                | false              |
-| `Path`             | **string*          | :heavy_minus_sign: | N/A                |                    |
-| `Message`          | **string*          | :heavy_minus_sign: | N/A                |                    |
+| `Success`          | *bool*             | :heavy_check_mark: | N/A                | false              |
+| `Path`             | *string*           | :heavy_check_mark: | N/A                |                    |
+| `Message`          | *string*           | :heavy_check_mark: | N/A                |                    |

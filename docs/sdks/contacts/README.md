@@ -22,7 +22,6 @@ Add a contact to your audience.
 package main
 
 import(
-	"os"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"context"
@@ -31,7 +30,7 @@ import(
 
 func main() {
     s := loopsgo.New(
-        loopsgo.WithSecurity(os.Getenv("API_KEY")),
+        loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
     request := components.ContactRequest{
         Email: "Ashtyn_Beer@gmail.com",
@@ -75,7 +74,6 @@ Update a contact by `email` or `userId`.<br>If you want to update a contact’s 
 package main
 
 import(
-	"os"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"context"
@@ -84,7 +82,7 @@ import(
 
 func main() {
     s := loopsgo.New(
-        loopsgo.WithSecurity(os.Getenv("API_KEY")),
+        loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
     request := components.ContactRequest{
         Email: "Giovanna61@yahoo.com",
@@ -128,7 +126,6 @@ Search for a contact by `email` or `userId`. Only one parameter is allowed.
 package main
 
 import(
-	"os"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"context"
 	"log"
@@ -136,13 +133,11 @@ import(
 
 func main() {
     s := loopsgo.New(
-        loopsgo.WithSecurity(os.Getenv("API_KEY")),
+        loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
-    var email *string = loopsgo.String("<value>")
 
-    var userID *string = loopsgo.String("<value>")
     ctx := context.Background()
-    res, err := s.Contacts.GetContactsFind(ctx, email, userID)
+    res, err := s.Contacts.GetContactsFind(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -180,7 +175,6 @@ Delete a contact by `email` or `userId`.
 package main
 
 import(
-	"os"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"context"
@@ -189,9 +183,12 @@ import(
 
 func main() {
     s := loopsgo.New(
-        loopsgo.WithSecurity(os.Getenv("API_KEY")),
+        loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
-    request := components.ContactDeleteRequest{}
+    request := components.ContactDeleteRequest{
+        Email: "Rebekah34@hotmail.com",
+        UserID: "<value>",
+    }
     ctx := context.Background()
     res, err := s.Contacts.PostContactsDelete(ctx, request)
     if err != nil {
@@ -215,8 +212,7 @@ func main() {
 ### Response
 
 **[*operations.PostContactsDeleteResponse](../../models/operations/postcontactsdeleteresponse.md), error**
-| Error Object                             | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| sdkerrors.ContactFailureResponse         | 400,404                                  | application/json                         |
-| sdkerrors.PostContactsDeleteResponseBody | 500                                      | application/json                         |
-| sdkerrors.SDKError                       | 4xx-5xx                                  | */*                                      |
+| Error Object                     | Status Code                      | Content Type                     |
+| -------------------------------- | -------------------------------- | -------------------------------- |
+| sdkerrors.ContactFailureResponse | 400,404                          | application/json                 |
+| sdkerrors.SDKError               | 4xx-5xx                          | */*                              |

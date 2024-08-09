@@ -19,7 +19,6 @@ Send a transactional email to a contact.
 package main
 
 import(
-	"os"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
 	"github.com/speakeasy-sdks/loops-go/models/components"
 	"context"
@@ -28,7 +27,7 @@ import(
 
 func main() {
     s := loopsgo.New(
-        loopsgo.WithSecurity(os.Getenv("API_KEY")),
+        loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
     request := components.TransactionalRequest{
         Email: "Rollin.Littel98@gmail.com",

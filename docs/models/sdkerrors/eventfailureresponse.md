@@ -5,5 +5,5 @@
 
 | Field              | Type               | Required           | Description        | Example            |
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Success`          | **bool*            | :heavy_minus_sign: | N/A                | false              |
-| `Message`          | **string*          | :heavy_minus_sign: | N/A                |                    |
+| `Success`          | *bool*             | :heavy_check_mark: | N/A                | false              |
+| `Message`          | *string*           | :heavy_check_mark: | N/A                |                    |
