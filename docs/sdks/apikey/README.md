@@ -1,17 +1,13 @@
-# MailingLists
-(*MailingLists*)
-
-## Overview
-
-View mailing lists
+# APIKey
+(*APIKey*)
 
 ### Available Operations
 
-* [GetLists](#getlists) - Get a list of mailing lists
+* [GetAPIKey](#getapikey) - Test your API key
 
-## GetLists
+## GetAPIKey
 
-Retrieve a list of your account's mailing lists.
+Test your API key
 
 ### Example Usage
 
@@ -30,11 +26,11 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.MailingLists.GetLists(ctx)
+    res, err := s.APIKey.GetAPIKey(ctx)
     if err != nil {
         log.Fatal(err)
     }
-    if res.MailingLists != nil {
+    if res.Object != nil {
         // handle response
     }
 }
@@ -52,7 +48,8 @@ func main() {
 
 ### Response
 
-**[*operations.GetListsResponse](../../models/operations/getlistsresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+**[*operations.GetAPIKeyResponse](../../models/operations/getapikeyresponse.md), error**
+| Error Object                    | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| sdkerrors.GetAPIKeyResponseBody | 401                             | application/json                |
+| sdkerrors.SDKError              | 4xx-5xx                         | */*                             |

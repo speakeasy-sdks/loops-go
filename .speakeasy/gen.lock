@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: d1780f98-50f7-4933-a201-d999ab031ea9
 management:
-  docChecksum: b9d1bc42be42f277618d09d9a732fd47
-  docVersion: 1.3.1
-  speakeasyVersion: 1.358.0
-  generationVersion: 2.390.6
-  releaseVersion: 0.3.0
-  configChecksum: f9082f7fbcc29075d2ad0ec8ad3d86fa
+  docChecksum: c35bcf300f97562722c2b0f49bbd90e6
+  docVersion: 1.3.2
+  speakeasyVersion: 1.376.0
+  generationVersion: 2.402.5
+  releaseVersion: 0.3.1
+  configChecksum: 3b88b1f6ca2b3287bf377812a3a592ec
   repoURL: https://github.com/speakeasy-sdks/loops-go.git
   installationURL: https://github.com/speakeasy-sdks/loops-go
 features:
   go:
     additionalDependencies: 0.1.0
-    core: 3.5.3
+    core: 3.5.5
     defaultEnabledRetries: 0.2.0
     devContainers: 2.90.0
     envVarSecurityUsage: 0.3.0
@@ -26,8 +26,9 @@ features:
     responseFormat: 0.1.2
     retries: 2.83.0
     sdkHooks: 0.1.0
-    unions: 2.85.8
+    unions: 2.85.9
 generatedFiles:
+  - apikey.go
   - contacts.go
   - mailinglists.go
   - events.go
@@ -52,6 +53,7 @@ generatedFiles:
   - internal/utils/retries.go
   - internal/utils/security.go
   - internal/utils/utils.go
+  - /models/operations/getapikey.go
   - /models/operations/postcontactscreate.go
   - /models/operations/putcontactsupdate.go
   - /models/operations/getcontactsfind.go
@@ -60,8 +62,8 @@ generatedFiles:
   - /models/operations/posteventssend.go
   - /models/operations/posttransactional.go
   - /models/operations/getcontactscustomfields.go
-  - /models/components/contactsuccessresponse.go
   - /models/components/httpmetadata.go
+  - /models/components/contactsuccessresponse.go
   - /models/components/contactrequest.go
   - /models/components/contact.go
   - /models/components/contactdeleteresponse.go
@@ -75,10 +77,13 @@ generatedFiles:
   - /models/components/transactionalrequest.go
   - /models/components/customfield.go
   - /models/components/security.go
+  - /models/sdkerrors/getapikey.go
   - /models/sdkerrors/contactfailureresponse.go
   - /models/sdkerrors/eventfailureresponse.go
   - /models/sdkerrors/posttransactional.go
   - /models/sdkerrors/transactionalfailure2response.go
+  - docs/models/operations/getapikeyresponsebody.md
+  - docs/models/operations/getapikeyresponse.md
   - docs/models/operations/postcontactscreateresponse.md
   - docs/models/operations/putcontactsupdateresponse.md
   - docs/models/operations/getcontactsfindrequest.md
@@ -88,8 +93,8 @@ generatedFiles:
   - docs/models/operations/posteventssendresponse.md
   - docs/models/operations/posttransactionalresponse.md
   - docs/models/operations/getcontactscustomfieldsresponse.md
-  - docs/models/components/contactsuccessresponse.md
   - docs/models/components/httpmetadata.md
+  - docs/models/components/contactsuccessresponse.md
   - docs/models/components/mailinglists.md
   - docs/models/components/contactrequest.md
   - docs/models/components/contact.md
@@ -106,6 +111,7 @@ generatedFiles:
   - docs/models/components/transactionalrequest.md
   - docs/models/components/customfield.md
   - docs/models/components/security.md
+  - docs/models/sdkerrors/getapikeyresponsebody.md
   - docs/models/sdkerrors/contactfailureresponse.md
   - docs/models/sdkerrors/eventfailureresponse.md
   - docs/models/sdkerrors/posttransactionalresponsebody.md
@@ -113,6 +119,7 @@ generatedFiles:
   - docs/models/sdkerrors/transactionalfailure2response.md
   - docs/sdks/loops/README.md
   - docs/models/operations/option.md
+  - docs/sdks/apikey/README.md
   - docs/sdks/contacts/README.md
   - docs/sdks/mailinglists/README.md
   - docs/sdks/events/README.md

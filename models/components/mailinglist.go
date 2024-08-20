@@ -3,8 +3,9 @@
 package components
 
 type MailingList struct {
-	ID   string `json:"id"`
-	Name string `json:"name"`
+	ID       string `json:"id"`
+	Name     string `json:"name"`
+	IsPublic bool   `json:"isPublic"`
 }
 
 func (o *MailingList) GetID() string {
@@ -19,4 +20,11 @@ func (o *MailingList) GetName() string {
 		return ""
 	}
 	return o.Name
+}
+
+func (o *MailingList) GetIsPublic() bool {
+	if o == nil {
+		return false
+	}
+	return o.IsPublic
 }

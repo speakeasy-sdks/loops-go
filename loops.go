@@ -66,6 +66,7 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 
 // Loops OpenAPI Spec: This is the OpenAPI Spec for the [Loops API](https://loops.so/docs/api).
 type Loops struct {
+	APIKey *APIKey
 	// Manage contacts in your audience
 	Contacts *Contacts
 	// View mailing lists
@@ -153,10 +154,10 @@ func New(opts ...SDKOption) *Loops {
 	sdk := &Loops{
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
-			OpenAPIDocVersion: "1.3.1",
-			SDKVersion:        "0.3.0",
-			GenVersion:        "2.390.6",
-			UserAgent:         "speakeasy-sdk/go 0.3.0 2.390.6 1.3.1 github.com/speakeasy-sdks/loops-go",
+			OpenAPIDocVersion: "1.3.2",
+			SDKVersion:        "0.3.1",
+			GenVersion:        "2.402.5",
+			UserAgent:         "speakeasy-sdk/go 0.3.1 2.402.5 1.3.2 github.com/speakeasy-sdks/loops-go",
 			Hooks:             hooks.New(),
 		},
 	}
@@ -175,6 +176,8 @@ func New(opts ...SDKOption) *Loops {
 	if serverURL != currentServerURL {
 		sdk.sdkConfiguration.ServerURL = serverURL
 	}
+
+	sdk.APIKey = newAPIKey(sdk.sdkConfiguration)
 
 	sdk.Contacts = newContacts(sdk.sdkConfiguration)
 

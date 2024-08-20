@@ -35,7 +35,6 @@ package main
 import (
 	"context"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
-	"github.com/speakeasy-sdks/loops-go/models/components"
 	"log"
 )
 
@@ -43,16 +42,13 @@ func main() {
 	s := loopsgo.New(
 		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
-	request := components.ContactRequest{
-		Email:        "Ashtyn_Beer@gmail.com",
-		MailingLists: &components.MailingLists{},
-	}
+
 	ctx := context.Background()
-	res, err := s.Contacts.PostContactsCreate(ctx, request)
+	res, err := s.APIKey.GetAPIKey(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.ContactSuccessResponse != nil {
+	if res.Object != nil {
 		// handle response
 	}
 }
@@ -62,6 +58,10 @@ func main() {
 
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
+
+### [APIKey](docs/sdks/apikey/README.md)
+
+* [GetAPIKey](docs/sdks/apikey/README.md#getapikey) - Test your API key
 
 ### [Contacts](docs/sdks/contacts/README.md)
 
@@ -92,10 +92,10 @@ func main() {
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
 
-| Error Object                     | Status Code                      | Content Type                     |
-| -------------------------------- | -------------------------------- | -------------------------------- |
-| sdkerrors.ContactFailureResponse | 400,405,409                      | application/json                 |
-| sdkerrors.SDKError               | 4xx-5xx                          | */*                              |
+| Error Object                    | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| sdkerrors.GetAPIKeyResponseBody | 401                             | application/json                |
+| sdkerrors.SDKError              | 4xx-5xx                         | */*                             |
 
 ### Example
 
@@ -106,7 +106,6 @@ import (
 	"context"
 	"errors"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
-	"github.com/speakeasy-sdks/loops-go/models/components"
 	"github.com/speakeasy-sdks/loops-go/models/sdkerrors"
 	"log"
 )
@@ -115,15 +114,12 @@ func main() {
 	s := loopsgo.New(
 		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
-	request := components.ContactRequest{
-		Email:        "Ashtyn_Beer@gmail.com",
-		MailingLists: &components.MailingLists{},
-	}
+
 	ctx := context.Background()
-	res, err := s.Contacts.PostContactsCreate(ctx, request)
+	res, err := s.APIKey.GetAPIKey(ctx)
 	if err != nil {
 
-		var e *sdkerrors.ContactFailureResponse
+		var e *sdkerrors.GetAPIKeyResponseBody
 		if errors.As(err, &e) {
 			// handle error
 			log.Fatal(e.Error())
@@ -159,7 +155,6 @@ package main
 import (
 	"context"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
-	"github.com/speakeasy-sdks/loops-go/models/components"
 	"log"
 )
 
@@ -168,16 +163,13 @@ func main() {
 		loopsgo.WithServerIndex(0),
 		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
-	request := components.ContactRequest{
-		Email:        "Ashtyn_Beer@gmail.com",
-		MailingLists: &components.MailingLists{},
-	}
+
 	ctx := context.Background()
-	res, err := s.Contacts.PostContactsCreate(ctx, request)
+	res, err := s.APIKey.GetAPIKey(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.ContactSuccessResponse != nil {
+	if res.Object != nil {
 		// handle response
 	}
 }
@@ -194,7 +186,6 @@ package main
 import (
 	"context"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
-	"github.com/speakeasy-sdks/loops-go/models/components"
 	"log"
 )
 
@@ -203,16 +194,13 @@ func main() {
 		loopsgo.WithServerURL("https://app.loops.so/api/v1"),
 		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
-	request := components.ContactRequest{
-		Email:        "Ashtyn_Beer@gmail.com",
-		MailingLists: &components.MailingLists{},
-	}
+
 	ctx := context.Background()
-	res, err := s.Contacts.PostContactsCreate(ctx, request)
+	res, err := s.APIKey.GetAPIKey(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.ContactSuccessResponse != nil {
+	if res.Object != nil {
 		// handle response
 	}
 }
@@ -267,7 +255,6 @@ package main
 import (
 	"context"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
-	"github.com/speakeasy-sdks/loops-go/models/components"
 	"log"
 )
 
@@ -275,16 +262,13 @@ func main() {
 	s := loopsgo.New(
 		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
-	request := components.ContactRequest{
-		Email:        "Ashtyn_Beer@gmail.com",
-		MailingLists: &components.MailingLists{},
-	}
+
 	ctx := context.Background()
-	res, err := s.Contacts.PostContactsCreate(ctx, request)
+	res, err := s.APIKey.GetAPIKey(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.ContactSuccessResponse != nil {
+	if res.Object != nil {
 		// handle response
 	}
 }
@@ -310,7 +294,6 @@ package main
 import (
 	"context"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
-	"github.com/speakeasy-sdks/loops-go/models/components"
 	"github.com/speakeasy-sdks/loops-go/retry"
 	"log"
 	"models/operations"
@@ -320,12 +303,9 @@ func main() {
 	s := loopsgo.New(
 		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
-	request := components.ContactRequest{
-		Email:        "Ashtyn_Beer@gmail.com",
-		MailingLists: &components.MailingLists{},
-	}
+
 	ctx := context.Background()
-	res, err := s.Contacts.PostContactsCreate(ctx, request, operations.WithRetries(
+	res, err := s.APIKey.GetAPIKey(ctx, operations.WithRetries(
 		retry.Config{
 			Strategy: "backoff",
 			Backoff: &retry.BackoffStrategy{
@@ -339,7 +319,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.ContactSuccessResponse != nil {
+	if res.Object != nil {
 		// handle response
 	}
 }
@@ -353,7 +333,6 @@ package main
 import (
 	"context"
 	loopsgo "github.com/speakeasy-sdks/loops-go"
-	"github.com/speakeasy-sdks/loops-go/models/components"
 	"github.com/speakeasy-sdks/loops-go/retry"
 	"log"
 )
@@ -373,16 +352,13 @@ func main() {
 			}),
 		loopsgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
-	request := components.ContactRequest{
-		Email:        "Ashtyn_Beer@gmail.com",
-		MailingLists: &components.MailingLists{},
-	}
+
 	ctx := context.Background()
-	res, err := s.Contacts.PostContactsCreate(ctx, request)
+	res, err := s.APIKey.GetAPIKey(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.ContactSuccessResponse != nil {
+	if res.Object != nil {
 		// handle response
 	}
 }
